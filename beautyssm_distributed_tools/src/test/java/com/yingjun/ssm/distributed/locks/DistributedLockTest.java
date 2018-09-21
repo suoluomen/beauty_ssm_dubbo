@@ -12,14 +12,14 @@ public class DistributedLockTest {
 
     private final Logger logger = LoggerFactory.getLogger(DistributedLockTest.class);
 
-    @Test
+    //@Test
     public void test() throws InterruptedException {
         //用多线程模拟分布式服务
         for (int i = 0; i < 10; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    DistributedLock lock = new DistributedLock("120.27.xxx.xx:2181", "test");
+                    DistributedLock lock = new DistributedLock("localhost:2181", "test");
                     try {
                         lock.lock();
                     } catch (KeeperException e) {

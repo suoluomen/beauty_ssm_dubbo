@@ -9,6 +9,7 @@
 
 	<properties>
 
+		<!--定义变量属性-->
 		<beautyssm_common.version>1.0.0</beautyssm_common.version>
 
 		<beautyssm_api_user.version>1.0.0</beautyssm_api_user.version>
@@ -31,6 +32,7 @@
 	</properties>
 
 	<modules>
+		<!--导入模块-->
 		<module>../beautyssm_common</module>
 		<module>../beautyssm_distributed_tools</module>
 		<module>../beautyssm_api_user</module>
@@ -45,6 +47,7 @@
 
 	<dependencies>
 		<!--common start -->
+		<!--引入公共所需jar包-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -139,7 +142,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>2.8.4</version>
+			<version>2.8.4.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>

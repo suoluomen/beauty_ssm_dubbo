@@ -16,7 +16,8 @@
 	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" />
 	
 	<!-- 用户服务接口 -->
-	<dubbo:reference interface="com.yingjun.ssm.api.user.service.UserService" id="userService" />
+	<!--check="false"表示在启动的时候，不必检查提供者是否提供服务，默认为true-->
+	<dubbo:reference interface="com.yingjun.ssm.api.user.service.UserService" id="userService" check="false"/>
 
 
 </beans>  
