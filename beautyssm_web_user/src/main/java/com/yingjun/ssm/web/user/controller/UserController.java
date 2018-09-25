@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +24,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	/*@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list1", method = RequestMethod.GET)
 	public String list(Model entity, Integer offset, Integer limit) {
 		LOG.info("invoke----------/user/list");
 		offset = offset == null ? 0 : offset;//默认便宜0
@@ -31,7 +32,7 @@ public class UserController {
 		List<User> list = userService.getUserList(offset, limit);
 		entity.addAttribute("userlist", list);
 		return "userlist";
-	}*/
+	}
 
 	
 	/**
@@ -41,12 +42,15 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	//使用json，xml返回结果放入body中
 	@ResponseBody
+	//传入参数，页码和页数
 	public BootStrapTableResult<User> list(Integer offset, Integer limit) {
 		LOG.info("invoke----------/user/list");
 		offset = offset == null ? 0 : offset;//默认便宜0
 		limit = limit == null ? 50 : limit;//默认展示50条
 		List<User> list = userService.getUserList(offset, limit);
+		//返回一个实体类，自动转化为json
 		return new BootStrapTableResult<User>(list);
 	}
 

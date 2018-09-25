@@ -20,3 +20,5 @@
 /beautyssm_service_user/beautyssm_service_user.iml
 /beautyssm_web_goods/beautyssm_web_goods.iml
 /beautyssm_web_user/beautyssm_web_user.iml
+/beautyssm_service_user/logs/
+/beautyssm_service_user/dubboregistry/

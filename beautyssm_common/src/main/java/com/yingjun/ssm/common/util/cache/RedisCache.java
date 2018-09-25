@@ -72,6 +72,7 @@ public class RedisCache {
 		boolean result = redisTemplate.execute(new RedisCallback<Boolean>() {
 			@Override
 			public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
+				//根据缓存时间设置value值
 				connection.setEx(bkey, expireTime, bvalue);
 				return true;
 			}
@@ -93,6 +94,7 @@ public class RedisCache {
 	}
 
 	public <T> List<T> getListCache(final String key, Class<T> targetClass) {
+
 		byte[] result = redisTemplate.execute(new RedisCallback<byte[]>() {
 			@Override
 			public byte[] doInRedis(RedisConnection connection) throws DataAccessException {

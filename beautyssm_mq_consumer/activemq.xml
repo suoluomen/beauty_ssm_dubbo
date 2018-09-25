@@ -69,9 +69,9 @@
         <persistenceAdapter>
            <!-- <kahaDB directory="${activemq.data}/kahadb"/>-->
            <!-- <jdbcPersistenceAdapter dataSource="#MySQL-DS"/>-->
-           ·<replicatedLevelDB
+           <replicatedLevelDB
            	 	directory="${activemq.data}/leveldb"
-           	 	replicas="3" #节点个数
+           	 	replicas="3"
            	 	bind="tcp://0.0.0.0:62621"
            	 	zkAddress="localhost:2181,localhost:2182,localhost:2183"
            	 	hostname="localhost"
@@ -122,9 +122,9 @@
     <!--注意：需要添加mysql-connector-java相关的jar包到avtivemq的lib包下-->
     <bean id="MySQL-DS" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.xx.xxx:3306/beautyssm_mq?useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/beautyssm_mq?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
-        <property name="password" value="yingjun"/>
+        <property name="password" value=""/>
     </bean>
 
     <!--

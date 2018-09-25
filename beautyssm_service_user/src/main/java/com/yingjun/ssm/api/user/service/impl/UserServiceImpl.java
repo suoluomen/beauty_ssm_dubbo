@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> getUserList(int offset, int limit) {
+		//拼装key，确保唯一性
 		String cache_key=RedisCache.CAHCENAME+"|getUserList|"+offset+"|"+limit;
 		//先去缓存中取
 		List<User> result_cache=cache.getListCache(cache_key, User.class);

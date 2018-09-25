@@ -33,7 +33,7 @@ public class DistributedBolckingQueueTest {
             }).start();
         }
 
-        DistributedBlockingQueue queue=new DistributedBlockingQueue("10.11.112.18:2181", "test");
+        DistributedBlockingQueue queue=new DistributedBlockingQueue("10.11.112.67:2181", "test");
         while(true){
             System.out.println(new String(queue.tack()));
         }
