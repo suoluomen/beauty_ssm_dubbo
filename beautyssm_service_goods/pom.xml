@@ -11,7 +11,7 @@
 
 	<artifactId>beautyssm_service_goods</artifactId>
 	<version>${beautyssm_service_goods.version}</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	
 	<dependencies>
 		<dependency>

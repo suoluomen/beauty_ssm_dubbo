@@ -106,7 +106,7 @@ public class GoodsServiceImpl implements GoodsService {
                     // 邮件发送
                     //通过消息中心，发送邮件告知用户
                     MailParam mail = new MailParam();
-                    mail.setTo("yingjunv_c@126.com");
+                    mail.setTo("chenfdf@xxx.com");
                     mail.setSubject("订单确认");
                     mail.setContent("你通过手机号：" + userPhone + "下单成功！");
                     try {
@@ -169,7 +169,7 @@ public class GoodsServiceImpl implements GoodsService {
         }*/
         //这里将userService的addScore操作通过消息中心去完成，避开分布式事务。
         try {
-            mqProducer.sendBizMessage(goodsid);
+            //mqProducer.sendBizMessage(goodsid);
 
         } catch (Exception e) {
             throw new RpcException(BizExceptionEnum.INNER_ERROR.getState(),
